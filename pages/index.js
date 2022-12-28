@@ -14,7 +14,6 @@ export default function Home() {
       <title>headass</title>
     </Head>
 
-
     <div>
       <h1>The Homepage</h1>
       <p className="mb-5">Some sample text. This is as simple as it gets folks</p>

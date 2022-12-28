@@ -10,15 +10,12 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <Link href="/" >Site Name</Link>
-            <ul>
-                <li>
-                    <Link href="/about">About-t</Link>
-                </li>
-                <li>
-                    <Link href="/photos">Photos-t</Link>
-                </li>
-            </ul>
+            <div className="navbar-items">
+                <Link className="navbar-item" href="/" >Home</Link>
+                <Link className="navbar-item" href="/about">About</Link>
+                <Link className="navbar-item" href="/photos">Photos</Link>
+                <Link className="navbar-item" href="/contact">Resume</Link>
+            </div>
         </div>
     );
 }
