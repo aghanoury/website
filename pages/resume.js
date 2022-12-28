@@ -1,12 +1,12 @@
 import React from "react";
 
-function about () {
+function resume () {
     return (
         <div>
-            <h1>About</h1>
+            <h1>Resume</h1>
             <p>Not much here yet ...</p>
         </div>
     );
 }
 
-export default about;
+export default resume
