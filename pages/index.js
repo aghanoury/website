@@ -17,7 +17,7 @@ export default function Home() {
 
     <div>
       <h1>The Homepage</h1>
-      <p className="mb-5">Some sample text</p>
+      <p className="mb-5">Some sample text. This is as simple as it gets folks</p>
       <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat leo sit amet quam dictum vulputate. Duis quis erat molestie ligula vehicula molestie ut vestibulum sapien. Donec sollicitudin neque vitae erat rutrum, vitae condimentum augue imperdiet. Proin dignissim velit a nisi lacinia, a consectetur lacus molestie. Fusce luctus auctor eros sed molestie. Cras purus leo, aliquam eget eros sed, malesuada facilisis mauris. In lacinia congue turpis quis dignissim. Donec lobortis congue felis eget consequat.</p>
       <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat leo sit amet quam dictum vulputate. Duis quis erat molestie ligula vehicula molestie ut vestibulum sapien. Donec sollicitudin neque vitae erat rutrum, vitae condimentum augue imperdiet. Proin dignissim velit a nisi lacinia, a consectetur lacus molestie. Fusce luctus auctor eros sed molestie. Cras purus leo, aliquam eget eros sed, malesuada facilisis mauris. In lacinia congue turpis quis dignissim. Donec lobortis congue felis eget consequat.</p>
     </div>
