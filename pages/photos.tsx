@@ -19,19 +19,20 @@ const imgs = [
     alt: "",
     width: 200,
     height: 1,
+    ratio: "4/3",
   },
-  {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-    alt: "",
-    width: 200,
-    height: 1,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-    alt: "",
-    width: 200,
-    height: 1,
-  },
+  // {
+  //   src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+  //   alt: "",
+  //   width: 200,
+  //   height: 1,
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+  //   alt: "",
+  //   width: 200,
+  //   height: 1,
+  // },
 ];
 
 const photos = () => {
@@ -41,12 +42,16 @@ const photos = () => {
       <div className="container mx-auto">
         <div className="grid gap-3 grid-cols-3">
           {imgs.map((img) => (
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width="400"
-              height={img.height}
-            />
+            <button className="relative aspect-[4/3] hover:shadow-2xl hover:scale-105 hover:backdrop-blur-xl ease-in-out duration-200 focus:outline-2 outline-black">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                // width="400"
+                // height={img.height}
+                fill
+                className="relative aspect-square object-cover overflow-hidden "
+              />
+            </button>
           ))}
         </div>
       </div>
