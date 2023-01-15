@@ -9,6 +9,9 @@ module.exports = {
       gridTemplateColumns: {
         16: "repeat(auto-fit, minmax(240px, 1fr))",
       },
+      gridTemplateRows: {
+        16: "repeat(auto-fit, minmax(240px, 1fr))",
+      },
     },
   },
   plugins: [],
