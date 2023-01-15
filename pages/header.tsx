@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import React, { useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -16,17 +17,13 @@ function classNames(...classes) {
 
 export default function Header({ title }) {
   return (
-    <Disclosure as="nav" className="p-0 m-0">
+    <Menu as="nav" className={`relative p-0 m-0 z-50`}>
       {({ open }) => (
         <>
           <div className="flex items-center mx-0">
             <div className="flex flex-1 items-center justify-between space-x-10 m-0 h-12 px-0">
-              {/* <img
-                    className="h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                    /> */}
-              <Link className="text-2xl" href="/">
+              {/* standard menu bar */}
+              <Link className="text-2xl max-sm:text-lg" href="/">
                 {title}
               </Link>
               <div className="flex items-center justify-between space-x-5">
@@ -40,16 +37,17 @@ export default function Header({ title }) {
                   </Link>
                 ))}
               </div>
-              <Disclosure.Button className="sm:hidden">
+              <Menu.Button className="sm:hidden">
                 <span className="sr-only">Open Menu</span>
                 {open ? (
                   <XMarkIcon className="block h-6 w-6"></XMarkIcon>
                 ) : (
                   <Bars3Icon className="block h-6 w-6"></Bars3Icon>
                 )}
-              </Disclosure.Button>
+              </Menu.Button>
             </div>
           </div>
+          {/* DROP DOWN MENU */}
           <Transition
             enter="transition ease duration-300 transform"
             enterFrom="opacity-0 -translate-y-12"
@@ -58,26 +56,24 @@ export default function Header({ title }) {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-12"
           >
-            <Disclosure.Panel className="sm:hidden text-white rounded-md right-0 absolute bg-black shadow-xl origin-top-right">
-              <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3">
+            <div className="absolute sm:hidden text-white rounded-md right-0 bg-black shadow-xl origin-top-right">
+              <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3 ">
                 {navigation.map((item) => (
-                  <Disclosure.Button
-                    className="
-                                    block px-10 py-2 rounded-lg
-                                    hover:bg-gray-700 hover:text-white"
+                  <Link
+                    className="block px-10 py-2 rounded-lg
+                  hover:bg-gray-700 hover:text-white "
                     key={item.name}
-                    as={Link}
                     href={item.href}
                   >
                     {item.name}
-                  </Disclosure.Button>
+                  </Link>
                 ))}
               </div>
-            </Disclosure.Panel>
+            </div>
           </Transition>
         </>
       )}
-    </Disclosure>
+    </Menu>
   );
 }
 
