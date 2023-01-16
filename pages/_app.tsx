@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
     ${show ? "opacity-100" : "opacity-0"}`}
     >
       <title>headass</title>
-      <Header title={WEBSITE_TITLE} />
+      <Header />
       {/* <div className="border-t-0 my-0 py-0 border-b-4 border-black mb-2 "></div> */}
       <Component {...pageProps} />
       <div className="border-t-0 my-2 py-0 border-b-4 border-black mb-0 "></div>
