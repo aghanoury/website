@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       duration-500 transform transition-all opacity-0 ease-in-out
     ${show ? "opacity-100" : "opacity-0"}`}
     >
-      <title>headass</title>
+      <title>pooya aghanoury</title>
       <Header />
       {/* <div className="border-t-0 my-0 py-0 border-b-4 border-black mb-2 "></div> */}
       <Component {...pageProps} />
