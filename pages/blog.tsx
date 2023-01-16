@@ -1,6 +1,6 @@
 import React from "react";
 
-const blog = () => {
+const Blog = () => {
   return <div>nothing to blog about yet...</div>;
 };
 

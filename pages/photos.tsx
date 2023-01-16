@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { setConstantValue } from "typescript";
 
 const IMGS = [
   {
@@ -134,7 +133,7 @@ const IMGS = [
 
 // const imgs = require.context("../public/gallery", true, /\.(png|jpe?g|svg)$/);
 
-const photos = () => {
+const Photos = () => {
   const [imgs, setImg] = useState(IMGS);
   // const [selected, setselected] = useState([]);
   // map image names to selected states
