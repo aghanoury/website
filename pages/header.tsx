@@ -6,14 +6,9 @@ import Link from "next/link";
 
 const navigation = [
   { name: "About", href: "/about", current: true },
-  { name: "Resume", href: "/contact", current: true },
   { name: "Photos", href: "/photos", current: true },
-  { name: "Contact", href: "/contact", current: true },
+  { name: "Blog", href: "/blog", current: true },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Header({ title }) {
   return (
@@ -21,7 +16,7 @@ export default function Header({ title }) {
       {({ open }) => (
         <>
           <div className="flex items-center mx-0">
-            <div className="flex flex-1 items-center justify-between space-x-10 m-0 h-12 px-0">
+            <div className="flex flex-1 items-center justify-between space-x-10 m-0 h-16 px-0">
               {/* standard menu bar */}
               <Link className="text-2xl max-sm:text-lg" href="/">
                 {title}
@@ -47,6 +42,7 @@ export default function Header({ title }) {
               </Menu.Button>
             </div>
           </div>
+
           {/* DROP DOWN MENU */}
           <Transition
             enter="transition ease duration-300 transform"
@@ -56,12 +52,12 @@ export default function Header({ title }) {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-12"
           >
-            <div className="absolute sm:hidden text-white rounded-md right-0 bg-black shadow-xl origin-top-right">
+            <div className="bg-dark_blue absolute sm:hidden text-white rounded-md right-0 bg-black shadow-2xl shadow-light_blue origin-top-right">
               <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3 ">
                 {navigation.map((item) => (
                   <Link
                     className="block px-10 py-2 rounded-lg
-                  hover:bg-gray-700 hover:text-white "
+                  hover:bg-blue hover:text-white "
                     key={item.name}
                     href={item.href}
                   >
