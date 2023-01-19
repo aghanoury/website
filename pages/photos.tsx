@@ -26,7 +26,7 @@ const IMGS = [
     name: "lacy girl",
     src: "/gallery/lacybnw.jpg",
     aspect: "md:aspect-square",
-    alt: "lacy girl after dinner",
+    alt: "lacy girl the tootsie roll",
   },
   {
     name: "img4",
