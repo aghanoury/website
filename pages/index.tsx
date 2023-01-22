@@ -50,7 +50,7 @@ export default function Home() {
       <div className="flex items-center justify-center">
         <p className="text-lg text-center">
           {text}
-          <span className="block-cursor absolute mt-1 ml-1" />
+          <span className="block-cursor absolute mt-1 ml-1 bg-dark_blue dark:bg-white" />
         </p>
       </div>
     </>
