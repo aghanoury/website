@@ -143,7 +143,7 @@ const Photos = () => {
   return (
     <>
       <div className="flex justify-center m-5">
-        Random photos from 2021 and 2022
+        I like to take pictures. Here are some of my favorites.
       </div>
       <div className="relative container mx-auto z-0">
         {/* <div className="grid gap-3 grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2"> */}
