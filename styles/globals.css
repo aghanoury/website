@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.block-cursor {
+  display: inline-block;
+  opacity: 0;
+  width: 10px;
+  height: 20px;
+  background: white;
+  animation: blink 1s step-end infinite;
+  animation-iteration-count: 5;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* .custom-text {
+  color: red;
+} */
