@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import React, { useState, useEffect } from "react";
-import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Menu, Transition, Switch } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const navigation = [
   { name: "About", href: "/about", current: true },
@@ -11,18 +12,27 @@ const navigation = [
   { name: "Photos", href: "/photos", current: true },
 ];
 
-// working on a dark mode toggle
-function Toggle() {
-  const [enabled, setEnabled] = useState(false);
+// toggle dark/light mode
+function Toggle(props) {
+  if (props.enabled) {
+    if (typeof window !== "undefined") {
+      document.documentElement.classList.add("dark");
+    }
+  }
 
   return (
-    <Switch checked={enabled} onChange={setEnabled} as={Fragment}>
+    <Switch checked={props.enabled} onChange={props.setEnabled} as={Fragment}>
       {({ checked }) => (
         /* Use the `checked` state to conditionally style the button. */
         <button
           className={`${
             checked ? "bg-light_blue" : "bg-orange"
           } relative inline-flex h-6 w-11 items-center rounded-full`}
+          onClick={() => {
+            checked
+              ? document.documentElement.classList.remove("dark")
+              : document.documentElement.classList.add("dark");
+          }}
         >
           <span className="sr-only">Enable notifications</span>
           <span
@@ -37,6 +47,19 @@ function Toggle() {
 }
 
 export default function Header() {
+  // if (typeof window !== "undefined") {
+  // const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [enabled, setEnabled] = useState(false);
+
+  const current_route = useRouter();
+  console.log(current_route.route);
+  // simple useEffect to set the initial state of the theme toggle
+  let didset = 0;
+  useEffect(() => {
+    didset = 1;
+    setEnabled(window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }, [didset]);
+
   return (
     <Menu as="nav" className={`relative p-0 m-0 z-50`}>
       {({ open }) => (
@@ -47,26 +70,35 @@ export default function Header() {
               <Link className="text-2xl max-sm:text-lg" href="/">
                 Pooya Aghanoury
               </Link>
-              <div className="flex items-center justify-between space-x-5">
+              <div className="flex items-center justify-between space-x-3 max-sm:hidden">
+                <Toggle enabled={enabled} setEnabled={setEnabled} />
                 {navigation.map((item) => (
-                  <Link
-                    className="max-sm:hidden"
-                    key={item.name}
-                    href={item.href}
-                  >
-                    {item.name}
-                  </Link>
+                  <div key={item.name} className="">
+                    <Link
+                      className={`relative rounded-lg p-1 px-1.5 inset-0 ${
+                        current_route.route === item.href
+                          ? "bg-pink dark:bg-blue"
+                          : ""
+                      }
+                      `}
+                      href={item.href}
+                    >
+                      {item.name}
+                    </Link>
+                  </div>
                 ))}
-                {/* <Toggle /> */}
               </div>
-              <Menu.Button className="sm:hidden">
-                <span className="sr-only">Open Menu</span>
-                {open ? (
-                  <XMarkIcon className="block h-6 w-6"></XMarkIcon>
-                ) : (
-                  <Bars3Icon className="block h-6 w-6"></Bars3Icon>
-                )}
-              </Menu.Button>
+              <div className="sm:hidden flex space-x-5">
+                <Toggle enabled={enabled} setEnabled={setEnabled} />
+                <Menu.Button className="">
+                  <span className="sr-only">Open Menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6 focus:outline-none"></XMarkIcon>
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6 focus:outline-none"></Bars3Icon>
+                  )}
+                </Menu.Button>
+              </div>
             </div>
           </div>
 
