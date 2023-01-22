@@ -34,8 +34,8 @@ const About = () => {
           <Hpar>
             <p>
               I'm a first year Electrical & Computer Engineering Ph.D. student
-              at UCLA focusing on{" "}
-              <span className="italic">chiplet security</span> as part of the{" "}
+              at UCLA focusing on <span className="">chiplet security</span> as
+              part of the{" "}
               <Alink
                 href="https://ssysarch.ee.ucla.edu/"
                 text="Secure Systems Architecture Lab"
