@@ -1,23 +1,40 @@
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import React from "react";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
-import Navbar from "./navbar";
 import { Transition } from "@headlessui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  // set a variable true after 1 second
+  const [text, setText] = useState("");
+  const [fullText, setFullText] = useState("Developer. Engineer. Researcher.");
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    let timeout = 100;
+    if (index < fullText.length) {
+      if (index > 0) {
+        if (fullText[index - 1] === ".") {
+          timeout = 500;
+        }
+      }
+      setTimeout(() => {
+        setText(text + fullText[index]);
+        setIndex(index + 1);
+      }, timeout);
+    }
+  }, [index]);
 
   return (
     <>
       <h1 className="text-xl"></h1>
-      <div className="text-justify">
+      <div className="text-justify items-center flex justify-center">
         <div
           className={`relative container w-60 mx-auto sm:mx-5 my-5 
-        aspect-square max-w-sm sm:float-right`}
+        aspect-square max-w-sm border-blue dark:border-white border-4 rounded-full
+        `}
         >
           <Image
             src="/gallery/profile.jpg"
@@ -29,35 +46,10 @@ export default function Home() {
             className="rounded-full absolute transition"
           />
         </div>
-        <p className="">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          unde tempora soluta quidem repellendus adipisci rerum, sapiente itaque
-          fugiat voluptate officiis quisquam quos nam tenetur accusamus dolorem
-          quas voluptatem sint. Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Nesciunt unde tempora soluta quidem repellendus
-          adipisci rerum, sapiente itaque fugiat voluptate officiis quisquam
-          quos nam tenetur accusamus dolorem quas voluptatem sint. Lorem, ipsum
-          dolor sit amet consectetur adipisicing elit. Nesciunt unde tempora
-          soluta quidem repellendus adipisci rerum, sapiente itaque fugiat
-          voluptate officiis quisquam quos nam tenetur accusamus dolorem quas
-          voluptatem sint. Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Nesciunt unde tempora soluta quidem repellendus adipisci rerum,
-          sapiente itaque fugiat voluptate officiis quisquam quos nam tenetur
-          accusamus dolorem quas voluptatem sint.
-        </p>
-        <p className="my-2">Another paragraph</p>
-        <p className="my-2">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          unde tempora soluta quidem repellendus adipisci rerum, sapiente itaque
-          fugiat voluptate officiis quisquam quos nam tenetur accusamus dolorem
-          quas voluptatem sint.
-        </p>
-        <p className="my-2">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          unde tempora soluta quidem repellendus adipisci rerum, sapiente itaque
-          fugiat voluptate officiis quisquam quos nam tenetur accusamus dolorem
-          quas voluptatem sint.
-        </p>
+      </div>
+      <div className="flex items-center justify-center">
+        <p className="text-xl text-center">{text}</p>
+        <div className="block-cursor" />
       </div>
     </>
   );
