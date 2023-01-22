@@ -48,8 +48,10 @@ export default function Home() {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <p className="text-xl text-center">{text}</p>
-        <div className="block-cursor" />
+        <p className="text-lg text-center">
+          {text}
+          <span className="block-cursor absolute mt-1 ml-1" />
+        </p>
       </div>
     </>
   );
