@@ -1,7 +1,12 @@
 import React from "react";
 
 const Blog = () => {
-  return <div>nothing to blog about yet...</div>;
+  return (
+    <div className="flex flex-col items-center">
+      <h1 className="text-xl m-5">Blog</h1>
+      <p className="text-justify sm:p-10">nothing to blog about yet...</p>
+    </div>
+  );
 };
 
 export default Blog;
