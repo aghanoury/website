@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     // <div className="bg-white text-black dark:text-white dark:bg-slate-800 flex flex-col justify-center max-w-4xl mx-auto my-1 border-4 border-black p-4 text-justify">
     // <div className="lg:mx-auto mx-5 mt-1 max-w-4xl border-2 border-black rounded-lg p-10">
     <div
-      className={`lg:mx-auto mx-5 mt-5 max-w-4xl font-mono
+      className={`lg:mx-auto m-10 mx-5 mt-5  max-w-4xl font-mono
       duration-500 transform transition-all opacity-0 ease-in-out
     ${show ? "opacity-100" : "opacity-0"}`}
     >
@@ -29,8 +29,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Header />
       {/* <div className="border-t-0 my-0 py-0 border-b-4 border-black mb-2 "></div> */}
       <Component {...pageProps} />
+
+      {/* bottom page border */}
       <div className="my-10 mx-auto max-w-lg border-t-2 border-black"></div>
 
+      {/* bottom page social media links */}
       <div className="flex items-center justify-center">
         {/* <a href="#" class="text-gray-400 hover:text-gray-500">
           <span class="sr-only">Facebook</span>
