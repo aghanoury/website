@@ -4,8 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import { Transition } from "@headlessui/react";
+import About from "../pages/about";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// the homepage
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -53,6 +56,10 @@ export default function Home() {
           <span className="block-cursor absolute mt-1 ml-1 bg-dark_blue dark:bg-white" />
         </p>
       </div>
+      {/* insert the about page down here */}
+      {/* bottom page border */}
+      {/* <div className="my-10 mx-auto max-w-lg border-t-2 border-black"></div> */}
+      {/* <About /> */}
     </>
   );
 }
