@@ -1,4 +1,5 @@
 import React from "react";
+import Hpar from "../components/hpar";
 
 function Alink(props) {
   return (
@@ -12,16 +13,6 @@ function Alink(props) {
     >
       {props.text}
     </a>
-  );
-}
-
-function Hpar(props) {
-  return (
-    <div
-      className={`rounded-lg p-4 bg-pink dark:bg-blue flex flex-col space-y-2`}
-    >
-      {props.children}
-    </div>
   );
 }
 
