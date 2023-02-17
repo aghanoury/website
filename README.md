@@ -1,3 +1,3 @@
-# Website 1
+# Personal Website
 
-My first nextjs website. Keeping it simple for now. More to come later
+Decided to try nextjs this time. Keeping it simple for now. More to come later.
