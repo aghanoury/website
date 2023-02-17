@@ -8,7 +8,7 @@ const Research = () => {
       {/* <p className="text-justify sm:p-10">Nothing to post yet...</p> */}
       <Hpar>
         My current research is aimed at finding new ways to make chiplet based
-        systems more secure and efficient.{" "}
+        systems more secure and efficient. Stay tuned for more.{" "}
       </Hpar>
     </div>
   );
