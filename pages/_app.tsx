@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="my-10 mx-auto max-w-lg border-t-2 border-black"></div>
 
       {/* bottom page social media links */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center pb-10">
         {/* <a href="#" class="text-gray-400 hover:text-gray-500">
           <span class="sr-only">Facebook</span>
           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
