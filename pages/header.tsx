@@ -26,7 +26,7 @@ function Toggle(props) {
         /* Use the `checked` state to conditionally style the button. */
         <button
           className={`${
-            checked ? "bg-light_blue" : "bg-orange"
+            checked ? "bg-blue" : "bg-pink"
           } relative inline-flex h-6 w-11 items-center rounded-full`}
           onClick={() => {
             checked
