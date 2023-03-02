@@ -20,8 +20,8 @@ const About = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <h1 className="text-xl m-4  p-2 rounded-lg">About</h1>
-        <div className="text-justify sm:p-10 flex flex-col space-y-2">
+        <h1 className="text-xl m-4 p-2 rounded-lg">About</h1>
+        <div className="text-justify break-words sm:p-10 flex flex-col space-y-2">
           <Hpar>
             <p>
               I'm a first year Electrical & Computer Engineering Ph.D. student
