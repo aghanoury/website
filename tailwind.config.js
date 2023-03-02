@@ -25,8 +25,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'day_background_gradient': "linear-gradient(0deg, hsla(206, 37%, 35%, 1) 0%, hsla(0, 18%, 64%, 1) 17%, hsla(207, 19%, 68%, 1) 100%)",
-        'night_background_gradient': "linear-gradient(0deg, hsla(15, 20%, 59%, 1) 0%, hsla(256, 7%, 41%, 1) 18%, hsla(218, 50%, 20%, 1) 100%)",
+        'day_background_gradient': "linear-gradient(0deg, hsla(0, 18%, 64%, 1) 0%, hsla(308, 4%, 65%, 1) 20%, hsla(207, 19%, 68%, 1) 100%);",
+        'night_background_gradient': "linear-gradient(0deg, hsla(15, 20%, 59%, 1) 0%, hsla(256, 7%, 41%, 1) 20%, hsla(218, 50%, 20%, 1) 100%)",
       },
       backgroundSize: {
         'auto': 'auto',
