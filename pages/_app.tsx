@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="my-10 mx-auto max-w-lg border-t-2 border-black"></div>
 
       {/* bottom page social media links */}
-      <div className="flex items-center justify-center pb-10">
+      <div className="flex flex-row justify-center space-x-10 pb-10">
         {/* <a href="#" class="text-gray-400 hover:text-gray-500">
           <span class="sr-only">Facebook</span>
           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </a> */}
         <a
           href="https://twitter.com/therealpooya"
-          className="ml-6 text-gray-400 hover:text-gray-500"
+          className="text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">Twitter</span>
           <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </a>
         <a
           href="https://www.linkedin.com/in/aghanoury/"
-          className="ml-6 text-gray-400 hover:text-gray-500"
+          className="text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">LinkedIn</span>
           <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </a>
         <a
           href="https://github.com/aghanoury"
-          className="ml-6 text-gray-400 hover:text-gray-500"
+          className="text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">GitHub</span>
           <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
