@@ -19,14 +19,13 @@ function Toggle(props) {
       document.documentElement.classList.add("dark");
     }
   }
-
   return (
     <Switch checked={props.enabled} onChange={props.setEnabled} as={Fragment}>
       {({ checked }) => (
         /* Use the `checked` state to conditionally style the button. */
         <button
           className={`${
-            checked ? "bg-blue" : "bg-pink"
+            checked ? "bg-light" : "bg-dark"
           } relative inline-flex h-6 w-11 items-center rounded-full`}
           onClick={() => {
             checked
@@ -38,7 +37,7 @@ function Toggle(props) {
           <span
             className={`${
               checked ? "translate-x-6" : "translate-x-1"
-            } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+            } inline-block h-4 w-4 transform rounded-full bg-white dark:bg-black transition`}
           />
         </button>
       )}
@@ -61,7 +60,7 @@ export default function Header() {
   }, [didset]);
 
   return (
-    <Menu as="nav" className={`relative p-0 m-0 z-50`}>
+    <Menu as="nav" className={`relative p-0 z-50`}>
       {({ open }) => (
         <>
           <div className="flex items-center mx-0">
@@ -77,7 +76,7 @@ export default function Header() {
                     <Link
                       className={`relative rounded-lg p-1 px-1.5 inset-0 ${
                         current_route.route === item.href
-                          ? "bg-pink dark:bg-blue"
+                          ? "bg-light dark:bg-dark"
                           : ""
                       }
                       `}
@@ -111,12 +110,12 @@ export default function Header() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-12"
           >
-            <div className="bg-dark_blue dark:bg-pink absolute sm:hidden text-white dark:text-dark_blue rounded-2xl right-0 bg-black shadow-2xl shadow-dark_blue origin-top-right">
+            <div className="bg-dark dark:bg-light absolute sm:hidden text-white dark:text-black rounded-2xl right-0 shadow-2xl origin-top-right">
               <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3 ">
                 {navigation.map((item) => (
                   <Link
                     className="block px-10 py-2 rounded-lg
-                  hover:bg-blue hover:text-white "
+                  hover:bg-medium hover:text-white"
                     key={item.name}
                     href={item.href}
                   >

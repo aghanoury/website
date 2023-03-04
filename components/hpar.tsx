@@ -4,7 +4,7 @@ const Hpar = (props) => {
   return (
     <div
       // className={`rounded-lg p-4 bg-pink dark:bg-blue flex flex-col space-y-2`}
-      className={`rounded-lg p-4 flex flex-col space-y-2 break-words`}
+      className={`rounded-lg flex flex-col text-justify break-words`}
     >
       {props.children}
     </div>
