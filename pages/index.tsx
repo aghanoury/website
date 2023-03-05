@@ -11,7 +11,7 @@ import Jokes from "@/components/jokes";
 const joke = Jokes();
 console.log(joke);
 
-function getJoke() {
+function GetJoke() {
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => {
     setHydrated(true);
@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       <div className="flex items-center justify-center">
         <p className="text-lg text-center">
-          <a>{getJoke()}</a>
+          <a>{GetJoke()}</a>
           {/* <span className="block-cursor absolute mt-1 ml-1 bg-dark_blue dark:bg-white" /> */}
         </p>
       </div>
